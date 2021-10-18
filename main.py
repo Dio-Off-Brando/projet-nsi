@@ -41,6 +41,8 @@ def main():
     
     dernier_joueur = ""
     while total_alu <0:
+        affichage_tas()
+        affichage_allumettes()
         tas = choix_tas()
         nb_alu = choix_allumettes()
 

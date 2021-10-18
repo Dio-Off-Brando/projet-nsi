@@ -23,7 +23,7 @@ def affichage_allumettes(liste):
     pass
 
 
-# fonction principale
+# fonction initialisation
 
 def initialisation(liste=[1,2,3,4,5,6], liste2=[1,2,3,4,5,6]):
     joueur1=input("nom joueur1: ")
@@ -35,6 +35,8 @@ def initialisation(liste=[1,2,3,4,5,6], liste2=[1,2,3,4,5,6]):
     #retourner une liste avec les donnees [joueur1, joueur2, liste ,liste2, total_alu]
     return [joueur1, joueur2, liste, liste2, total_alu]
 
+
+#fonction principale
 
 def main():
     joueur1, joueur2, liste, liste2, total_alu = initialisation()

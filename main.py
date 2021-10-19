@@ -28,21 +28,21 @@ def affichage_allumettes(liste):
 
 # fonction initialisation
 
-def initialisation(liste=[1,2,3,4,5,6], liste2=[1,2,3,4,5,6]):
+def initialisation(liste_tas=[1,2,3,4,5,6], liste_allumettes=[1,2,3,4,5,6]):
     joueur1=input("nom du joueur 1: ")
-    joueur2=input('nom du joueur 2: ')
+    joueur2=input("nom du joueur 2: ")
     total_alu=0
-    for i in range(len(liste)):
-        total_alu = total_alu+ liste[i]*liste2[i]
+    for i in range(len(liste_tas)):
+        total_alu +=liste_allumettes[i]
     
-    #retourner une liste avec les donnees [joueur1, joueur2, liste ,liste2, total_alu]
-    return [joueur1, joueur2, liste, liste2, total_alu]
+    #retourner une liste avec les donnees [joueur1, joueur2, liste ,liste_allumettes, total_alu]
+    return [joueur1, joueur2, liste_tas, liste_allumettes, total_alu]
 
 
 #fonction principale
 
 def main():
-    joueur1, joueur2, liste, liste2, total_alu = initialisation()
+    joueur1, joueur2, liste_tas, liste_allumettes, total_alu = initialisation()
     # 0 veut dire joueur1, 1 veut dire joueur2
     # mit a 1 pour commencer avec le joueur1
     dernier_joueur = 1
@@ -55,12 +55,12 @@ def main():
         else:
             nom_joueur = joueur2
             dernier_joueur=1
-        affichage_tas(liste)
-        affichage_allumettes(liste2)
+        affichage_tas(liste_tas)
+        affichage_allumettes(liste_allumettes)
         tas = choix_tas(nom_joueur)
         nb_alu = choix_allumettes(nom_joueur)
         # enlever nb_alu de tas
-        liste2[tas]-=nb_alu
+        liste_allumettes[tas]-=nb_alu
       
 
         

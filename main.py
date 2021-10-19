@@ -13,13 +13,13 @@ def affichage_tas(liste):
     pass
 
 def choix_allumettes(joueur):
-    #adapter au nom du joueur
-    return input(joueur+" choisis un nombre d'allumettes: ")
+    #adapté au nom du joueur
+    return int(input(joueur+" choisis un nombre d'allumettes: "))
 
 
 def choix_tas(joueur):
-    #adapter au nom du joueur
-    return input(joueur+" choisis un tas")
+    #adapté au nom du joueur
+    return int(input("à " + joueur+"de choisis un tas : "))
 
 
 def affichage_allumettes(liste):
@@ -29,10 +29,10 @@ def affichage_allumettes(liste):
 # fonction initialisation
 
 def initialisation(liste=[1,2,3,4,5,6], liste2=[1,2,3,4,5,6]):
-    joueur1=input("nom joueur1: ")
-    joueur2=input('nom joueur2: ')
+    joueur1=input("nom du joueur 1: ")
+    joueur2=input('nom du joueur 2: ')
     total_alu=0
-    for i in range(liste):
+    for i in range(len(liste)):
         total_alu = total_alu+ liste[i]*liste2[i]
     
     #retourner une liste avec les donnees [joueur1, joueur2, liste ,liste2, total_alu]
@@ -48,16 +48,19 @@ def main():
     dernier_joueur = 1
     joueur=0
 
-    while total_alu <0:
+    while total_alu >0:
         if dernier_joueur==1:
-            joueur=joueur1
+            nom_joueur=joueur1
             dernier_joueur = 0
         else:
-            joueur = joueur2
+            nom_joueur = joueur2
             dernier_joueur=1
         affichage_tas(liste)
         affichage_allumettes(liste2)
-        tas = choix_tas(joueur1)
-        nb_alu = choix_allumettes(joueur1)
+        tas = choix_tas(nom_joueur)
+        nb_alu = choix_allumettes(nom_joueur)
+        # enlever nb_alu de tas
+        liste2[tas]-=nb_alu
+      
 
         

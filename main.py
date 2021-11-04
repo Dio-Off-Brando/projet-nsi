@@ -8,15 +8,18 @@
 
 
 
-
+#prend un argument comme [1,2,3,4,5]
 def affichage_tas(liste):
     nb_tas=len(liste)
     string_presentation=""
-    for i in range(len(liste)-1):
-      string_presentation+= "|    "
-     
+    for i in range(len(liste)):
+      string_presentation+= "|  "+str(i+1)+"  "
+    return string_presentation
+
+
 
 def choix_allumettes(joueur):
+    
     #adapté au nom du joueur
     return int(input(joueur+" choisis un nombre d'allumettes : "))
 
@@ -26,8 +29,16 @@ def choix_tas(joueur):
     return int(input("à " + joueur+"de choisis un tas : "))
 
 
+
+# prend un argument comme ["I", "II", "III", "IIII", "IIIII"] 
 def affichage_allumettes(liste):
-    pass
+    espace_alignement =6
+    liste_reorganise_en_string =""
+    for i in liste:
+        liste_reorganise_en_string+= "| "+i+(espace_alignement-len(i))
+    return liste_reorganise_en_string
+
+
 
 
 # fonction initialisation
@@ -62,7 +73,7 @@ def main(liste_tas=["I", "II", "III", "IIII", "IIIII", "IIIIII"]):
             nom_joueur = joueur2
             dernier_joueur=1
 
-        #mécanique tour    
+        #mécanique tour 
         affichage_tas(liste_tas)
         affichage_allumettes(liste_tas)
         tas = choix_tas(nom_joueur)
@@ -70,4 +81,4 @@ def main(liste_tas=["I", "II", "III", "IIII", "IIIII", "IIIIII"]):
         # enlever nb_alu de tas
         liste_tas[tas] = liste_tas[tas][:nb_alu] #enlève nb_alu de char à liste_tas[tas]
 
-        
+    

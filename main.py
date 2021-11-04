@@ -35,7 +35,7 @@ def affichage_allumettes(liste):
     espace_alignement =6
     liste_reorganise_en_string =""
     for i in liste:
-        liste_reorganise_en_string+= "| "+i+(espace_alignement-len(i))
+        liste_reorganise_en_string+= "| "+str(i)+" "*(espace_alignement-len(i))
     return liste_reorganise_en_string
 
 
